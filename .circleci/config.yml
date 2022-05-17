@@ -7,7 +7,7 @@ jobs:
       - image: mysql:5.7.27
         environment:
           MYSQL_ROOT_PASSWORD: "password"
-          MYSQL_DATABASE: pbxx_test
+          MYSQL_DATABASE: double_entry_test
     working_directory: ~/pbxx
     steps:
       - checkout
