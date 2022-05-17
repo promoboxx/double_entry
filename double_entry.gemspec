@@ -47,9 +47,9 @@ Please note the following changes in DoubleEntry:
 POSTINSTALLMESSAGE
 
   gem.add_dependency 'money',                 '>= 6.0.0'
-  gem.add_dependency 'activerecord',          '>= 3.2.0'
-  gem.add_dependency 'activesupport',         '>= 3.2.0'
-  gem.add_dependency 'railties',              '>= 3.2.0'
+  gem.add_dependency 'activerecord',          '<= 5.0.7.2'
+  gem.add_dependency 'activesupport',         '<= 5.0.7.2'
+  gem.add_dependency 'railties',              '<= 5.0.7.2'
 
   gem.add_development_dependency 'rake'
   gem.add_development_dependency 'mysql2',    '~> 0.3.20'
