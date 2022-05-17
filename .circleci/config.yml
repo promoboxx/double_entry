@@ -1,0 +1,35 @@
+version: 2
+jobs:
+  build:
+    parallelism: 1
+    docker:
+      - image: circleci/ruby:2.3
+    working_directory: ~/pbxx
+    steps:
+      - checkout
+
+      - restore_cache:
+          keys:
+            - ruby-cache-{{ arch }}-{{ .Branch }}-{{ checksum "Gemfile" }}-{{ checksum "double_entry.gemspec" }}
+            - ruby-cache-{{ arch }}-{{ .Branch }}
+            - ruby-cache
+
+      - run:
+          name: Bundle Install
+          command: bundle check --path=vendor/bundle || bundle install --path=vendor/bundle --jobs=4 --retry=3
+
+      - save_cache:
+          key: ruby-cache-{{ arch }}-{{ .Branch }}-{{ checksum "Gemfile" }}-{{ checksum "double_entry.gemspec" }}
+          paths:
+            - vendor/bundle
+
+      - run:
+          name: Run tests
+          command: |
+            bundle exec rspec --profile 10 \
+                              --format RspecJunitFormatter \
+                              --out test_results/rspec.xml \
+                              --format progress
+
+      - store_test_results:
+          path: test_results
