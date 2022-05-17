@@ -4,6 +4,10 @@ jobs:
     parallelism: 1
     docker:
       - image: circleci/ruby:2.3
+      - image: mysql:5.7.27
+        environment:
+          MYSQL_ROOT_PASSWORD: "password"
+          MYSQL_DATABASE: pbxx_test
     working_directory: ~/pbxx
     steps:
       - checkout
