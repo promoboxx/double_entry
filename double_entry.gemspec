@@ -72,5 +72,4 @@ POSTINSTALLMESSAGE
   gem.add_development_dependency 'pry-stack_explorer'
   gem.add_development_dependency 'awesome_print'
   gem.add_development_dependency 'ruby-prof'
-  gem.add_development_dependency 'ruby-prof'
 end
