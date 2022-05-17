@@ -52,7 +52,7 @@ POSTINSTALLMESSAGE
   gem.add_dependency 'railties',              '>= 3.2.0'
 
   gem.add_development_dependency 'rake'
-  gem.add_development_dependency 'mysql2'
+  gem.add_development_dependency 'mysql2',    '~> 0.3.20'
   gem.add_development_dependency 'pg'
   gem.add_development_dependency 'sqlite3'
 
@@ -64,7 +64,7 @@ POSTINSTALLMESSAGE
   gem.add_development_dependency 'machinist'
   gem.add_development_dependency 'timecop'
   gem.add_development_dependency 'test-unit'
-  gem.add_development_dependency 'rspec_junit_formatter', "~> 0.4"
+  gem.add_development_dependency 'rspec_junit_formatter'
 
   gem.add_development_dependency 'pry'
   gem.add_development_dependency 'pry-doc'
