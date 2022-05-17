@@ -53,7 +53,7 @@ module DoubleEntry
       end
 
       def clear_old_aggregates
-        LineAggregate.delete_all(field_hash)
+        LineAggregate.where(field_hash).delete_all
       end
 
       def calculate
